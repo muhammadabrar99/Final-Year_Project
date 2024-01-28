@@ -32,7 +32,7 @@ describe("News Room Page", () => {
 
   // mobile view
   it("should display the mobile view", () => {
-    cy.viewport(400, 667);
+    cy.viewport(375, 667);
 
     // visit the News Room page
     cy.visit("https://promo.indrive.com/newsroom");
