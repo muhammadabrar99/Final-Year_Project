@@ -20,18 +20,16 @@ describe("Test suite for Home page in Desktop View", () => {
   });
 
   it("Should be able to click on curosel buttons", () => {
-    cy.get(".b17nm4v5 > :nth-child(2)").click();
-    cy.wait(1500);
-    cy.get(".b17nm4v5 > :nth-child(3)").click();
-    cy.wait(1500);
-    cy.get(".b17nm4v5 > :nth-child(4)").click();
-    cy.wait(1500);
+    cy.get(".b17nm4v5").find(".b663fty").eq(0).click();
+    cy.wait(1000);
+    cy.get(".b17nm4v5").find(".b663fty").eq(1).click();
+    cy.wait(1000);
+    cy.get(".b17nm4v5").find(".b663fty").eq(2).click();
+    cy.wait(1000);
   });
 
   it("Should be able to click on Download app button", () => {
-    cy.get(
-      ".slick-active > :nth-child(1) > .sp8unc > .tburq2x > .c1hr9zt3 > .dxcjrp > .rzjt6q5 > p"
-    ).click();
+    cy.get(".dxcjrp").find(".rzjt6q5").eq(0).click();
     cy.wait(2000);
     // Close Download App modal
     cy.get(".CloseIcon-sc-ziqxz6-2").click();
@@ -39,39 +37,51 @@ describe("Test suite for Home page in Desktop View", () => {
   });
 
   it("Should be able to click on links in Indrive Mobility section", () => {
-    cy.get(".mb88p12.at62d2f > .a1q518el").scrollIntoView();
+    cy.get("[class='m1k6ir4o mb88p12 at62d2f']").scrollIntoView();
     cy.wait(2000);
-    cy.get('.l15smieq > :nth-child(1) > [data-testid="utm-link"]').click({
-      force: true,
-    });
+    // clcik on first link
+    cy.get(".c122lhwp")
+      .find(".l15smieq")
+      .find("[class='c1t1nq80 c10z6eqt']")
+      .eq(0)
+      .click();
     cy.wait(2000);
+    // Go back to home page
     cy.visit("https://indrive.com/en/home/");
-    cy.get(".mb88p12.at62d2f > .a1q518el").scrollIntoView();
+    //Scroll to Indrive Mobility section
+    cy.get("[class='m1k6ir4o mb88p12 at62d2f']").scrollIntoView();
     cy.wait(1000);
-
-    cy.get('.l15smieq > :nth-child(2) > [data-testid="utm-link"]').click({
-      force: true,
-    });
+    // clcik on second link
+    cy.get(".c122lhwp")
+      .find(".l15smieq")
+      .find("[class='c1t1nq80 c10z6eqt']")
+      .eq(1)
+      .click();
     cy.wait(2000);
+    // Go back to home page
     cy.visit("https://indrive.com/en/home/");
-    cy.get(".mb88p12.at62d2f > .a1q518el").scrollIntoView();
+    //Scroll to Indrive Mobility section
+    cy.get("[class='m1k6ir4o mb88p12 at62d2f']").scrollIntoView();
     cy.wait(1000);
-
-    cy.get('.l15smieq > :nth-child(3) > [data-testid="utm-link"]').click({
-      force: true,
-    });
+    // clcik on third link
+    cy.get(".c122lhwp")
+      .find(".l15smieq")
+      .find("[class='c1t1nq80 c10z6eqt']")
+      .eq(2)
+      .click();
     cy.wait(2000);
+    // Go back to home page
     cy.visit("https://indrive.com/en/home/");
-    cy.get(".mb88p12.at62d2f > .a1q518el").scrollIntoView();
+    //Scroll to Indrive Mobility section
+    cy.get("[class='m1k6ir4o mb88p12 at62d2f']").scrollIntoView();
     cy.wait(1000);
-
-    cy.get('.l15smieq > :nth-child(4) > [data-testid="utm-link"]').click({
-      force: true,
-    });
+    // clcik on fourth link
+    cy.get(".c122lhwp")
+      .find(".l15smieq")
+      .find("[class='c1t1nq80 c10z6eqt']")
+      .eq(3)
+      .click();
     cy.wait(2000);
-    cy.visit("https://indrive.com/en/home/");
-    cy.get(".mb88p12.at62d2f > .a1q518el").scrollIntoView();
-    cy.wait(1000);
   });
 
   it("Should be able to click on Download app button", () => {
