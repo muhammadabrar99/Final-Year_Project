@@ -94,28 +94,35 @@ describe("Test suite for Home page in Desktop View", () => {
   });
 
   it("Should be able to click on links in Indrive Services section", () => {
-    cy.get(".m19chpxv > :nth-child(9)").scrollIntoView();
+    cy.get(".s1qkwdkj").scrollIntoView();
     cy.wait(2000);
-    cy.get('.cmgnqbs > [data-testid="utm-link"]').click({ force: true });
+    cy.get("[class='cmgnqbs c10z6eqt']").find("a").eq(0).click();
   });
 
   it("Should be able to click on all links in Imapct Projects Section", () => {
-    cy.get(":nth-child(11) > .a1q518el").scrollIntoView();
+    cy.get(":nth-child(11) > .a1q518el").scrollIntoView({ easing: "linear" });
     cy.wait(1000);
-    cy.get(
-      ":nth-child(11) > .a1q518el > .ihwutvj > .t55jd3y > .c1ergle9 > a > .clq835v"
-    ).click();
+
+    // click on first link
+    cy.get(".t55jd3y").eq(2).find(".c1ergle9").find("a").click();
     cy.wait(1000);
-    cy.get(
-      ".navbar > .container-9 > .nav-content-2 > .brand-2 > .image-81"
-    ).click();
-    cy.get(":nth-child(11) > .a1q518el").scrollIntoView();
-    cy.wait(2000);
-    cy.get(".leqa5vp > a").then(($link) => {
-      $link.removeAttr("target");
-      $link.attr("rel", "noopener noreferrer");
-    });
-    cy.get(".leqa5vp > a").click();
+
+    // click on Indrive logo & go back to home page
+    cy.get(".nav-content-2")
+      .find("[class='brand-2 w-nav-brand']")
+      .eq(0)
+      .click();
+
+    // click on second link
+    cy.get(".leqa5vp").scrollIntoView({ easing: "linear" });
+    cy.get(".leqa5vp")
+      .find("a")
+      .then(($link) => {
+        $link.removeAttr("target");
+        $link.attr("rel", "noopener noreferrer");
+      });
+    cy.get(".leqa5vp").find("a").eq(0).click();
+    cy.wait(1000);
   });
 
   it("Should be able to click on download app button", () => {
