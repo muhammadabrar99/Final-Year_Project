@@ -81,10 +81,7 @@ describe("test suite for Home page in Mobile View", () => {
       ":nth-child(11) > .a1q518el > .c122lhwp > .l15smieq > :nth-child(4)"
     ).scrollIntoView();
     cy.wait(1000);
-    cy.get(".leqa5vp > a").then(($link) => {
-      $link.removeAttr("target");
-    });
-    cy.get(".leqa5vp > a").click();
+    cy.get(".leqa5vp > a").invoke("removeAttr", "target").click();
   });
 
   it("Should be able to click on Download app button", () => {

@@ -115,13 +115,7 @@ describe("Test suite for Home page in Desktop View", () => {
 
     // click on second link
     cy.get(".leqa5vp").scrollIntoView({ easing: "linear" });
-    cy.get(".leqa5vp")
-      .find("a")
-      .then(($link) => {
-        $link.removeAttr("target");
-        $link.attr("rel", "noopener noreferrer");
-      });
-    cy.get(".leqa5vp").find("a").eq(0).click();
+    cy.get(".leqa5vp").find("a").eq(0).invoke("removeAttr", "target").click();
     cy.wait(1000);
   });
 
