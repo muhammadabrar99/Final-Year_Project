@@ -118,24 +118,18 @@ describe("Tests Suite for Navbar in Tablet view", () => {
     cy.wait(1000);
     cy.get(
       '[style="--bju7flq-0: flex; --bju7flq-1: 10px 0; --bju7flq-2: auto;"] > .ColBox-sc-1p3mafh-0 > :nth-child(5) > a'
-    ).then(($link) => {
-      $link.removeAttr("target");
-      $link.attr("rel", "noopener noreferrer");
-    });
-    cy.get(
-      '[style="--bju7flq-0: flex; --bju7flq-1: 10px 0; --bju7flq-2: auto;"] > .ColBox-sc-1p3mafh-0 > :nth-child(5) > a'
-    ).click();
+    )
+      .invoke("removeAttr", "target")
+      .click();
     cy.wait(1000);
   });
 
   it("Should be able to visit Careers Page", () => {
     cy.get(".b2nifjw").click();
     cy.wait(1000);
-    cy.get(":nth-child(7) > .light-font").then(($link) => {
-      $link.removeAttr("target");
-      $link.attr("rel", "noopener noreferrer");
-    });
-    cy.get(":nth-child(7) > .light-font").click();
+    cy.get(":nth-child(7) > .light-font")
+      .invoke("removeAttr", "target")
+      .click();
     cy.wait(1000);
   });
 

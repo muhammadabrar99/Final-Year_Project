@@ -78,11 +78,7 @@ describe("Tests Suite for Navbar in desktop view", () => {
   });
 
   it("Should be able to visit Careers Page", () => {
-    cy.get(".s18zxe3h > :nth-child(5) > div > a").then(($link) => {
-      $link.removeAttr("target");
-      $link.attr("rel", "noopener noreferrer");
-    });
-    cy.get(".s18zxe3h > :nth-child(5) > div > a").click();
+    cy.get(".s18zxe3h > :nth-child(5) > div > a").invoke('removeAttr', 'target').click();
     cy.wait(1000);
   });
 
