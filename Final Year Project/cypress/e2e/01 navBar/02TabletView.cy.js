@@ -7,11 +7,14 @@ describe("Tests Suite for Navbar in Tablet view", () => {
     cy.wait(2000);
   });
 
-  it("Should be able to click on Change Language button", () => {
-    cy.get(".sgoBd > .l1e825z9 > .lt0vyk1").click();
+  it.only("Should be able to Click on Change Language button", () => {
+    cy.get(
+      ".hhqrj3f > .crci2xc > :nth-child(1) > .lvq3dmd > .l1e825z9"
+    ).click();
     cy.wait(1000);
     cy.get('[title="click to switch to Urdu language"]').click();
     cy.wait(1000);
+    cy.url().should("include", "ur-PK/");
   });
 
   it("Should be able to visit Indrive City Page", () => {
